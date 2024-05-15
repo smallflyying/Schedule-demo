@@ -67,6 +67,7 @@
 <!--        <filter-class>com.atguigu.filters.Filter3</filter-class>-->
 <!--    </filter>-->
 
+    <!--filter-mapping的顺序决定了过滤器的工作顺序-->
 <!--    <filter-mapping>-->
 <!--        <filter-name>filter3</filter-name>-->
 <!--        <url-pattern>/*</url-pattern>-->
