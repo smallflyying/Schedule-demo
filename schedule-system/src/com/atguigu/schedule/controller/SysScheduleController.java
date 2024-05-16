@@ -13,13 +13,13 @@ import java.io.IOException;
  * 修改日程的请求  /schedule/update
  * 删除日程的请求  /schedule/remove
  * 。。。。
- *
+ *  , name = "scheduleServlet"
  *
  *
  * @author LiHongFei
  * @since 2024/5/12
  */
-@WebServlet("/schedule/*")
+@WebServlet(value = "/schedule/*")
 public class SysScheduleController extends BaseController {
 
     protected void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
