@@ -1,9 +1,13 @@
 package com.atguigu.schedule.controller;
 
+import com.atguigu.schedule.common.Result;
+import com.atguigu.schedule.common.ResultCodeEnum;
 import com.atguigu.schedule.pojo.SysUser;
 import com.atguigu.schedule.service.SysUserService;
 import com.atguigu.schedule.service.impl.SysUserServiceImpl;
 import com.atguigu.schedule.util.MD5Util;
+import com.atguigu.schedule.util.WebUtil;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -38,12 +42,14 @@ public class SysUserController extends BaseController {
 
         // 如果有  响应 已占用
         // 如果没有 响应 可用
-        String info = "可用";
-        if (null != sysUser) {
-            info = "已占用";
-        }
 
-        resp.getWriter().write(info);
+        Result result = Result.ok(null);
+
+        if (null != sysUser) {
+            result = Result.build(null, ResultCodeEnum.USERNAME_USED);
+        }
+        // 将result对象转换为JSON串响应给客户端
+        WebUtil.writeJson(resp,result);
     }
 
     /**
