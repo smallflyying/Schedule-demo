@@ -7,7 +7,7 @@ package com.atguigu.schedule.common;
  */
 public enum ResultCodeEnum {
     SUCCESS(200,"success"),
-    USERNAME(501,"usernameError"),
+    USERNAME_ERR0R(501,"usernameError"),
     PASSWORD_ERROR(503,"passwordError"),
     NOTLOGIN(504,"notlogin"),
     USERNAME_USED(505,"usernameUsed");
