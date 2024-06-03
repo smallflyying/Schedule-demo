@@ -25,4 +25,12 @@ public interface SysScheduleDao {
      * @return 将所有日程放入一个：List<SysSchedule>集合中返回
      */
     List<SysSchedule> findAll();
+
+    List<SysSchedule> findItemListByUid(int uid);
+
+    Integer addDefault(int uid);
+
+    Integer updateSchedule(SysSchedule sysSchedule);
+
+    Integer removeSchedule(int sid);
 }
